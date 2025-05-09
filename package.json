@@ -1,5 +1,6 @@
 {
-  "name": "06-jobs-api",
+  "name": "stripe-payment",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",

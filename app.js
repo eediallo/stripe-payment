@@ -1,19 +1,17 @@
-require('dotenv').config();
-require('express-async-errors');
+import dotenv from "dotenv";
+import "express-async-errors";
+import express from "express";
 
-const express = require('express');
+import notFoundMiddleware from "./middleware/not-found.js";
+import errorHandlerMiddleware from "./middleware/error-handler.js";
+
+dotenv.config();
+
 const app = express();
 
-// controller
-
-// error handler
-const notFoundMiddleware = require('./middleware/not-found');
-const errorHandlerMiddleware = require('./middleware/error-handler');
-
 app.use(express.json());
-app.use(express.static('./public'));
+app.use(express.static("./public"));
 
-// stripe
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
